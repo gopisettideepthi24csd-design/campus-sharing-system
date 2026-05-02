@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Received Requests - Campus Sharing System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- ============================================================
+         RECEIVED REQUESTS PAGE
+         Shows all borrow requests received for the user's items.
+         Owners can approve or reject pending requests.
+         Admin can see all requests.
+         ============================================================ -->
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">🎓 Campus Sharing</div>
+        <div class="nav-links">
+            <a href="/dashboard" class="nav-link">Dashboard</a>
+            <a href="/books-page" class="nav-link">Books</a>
+            <a href="/resources-page" class="nav-link">Resources</a>
+            <a href="/my-requests" class="nav-link">My Requests</a>
+            <a href="/received-requests" class="nav-link active">Received Requests</a>
+        </div>
+        <div class="nav-user">
+            <span id="user-name">User</span>
+            <span id="user-role" class="badge"></span>
+            <button class="btn btn-sm btn-outline" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="page-header">
+            <h1>📥 Received Requests</h1>
+        </div>
+        
+        <!-- Requests Table -->
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Type</th>
+                        <th>Requested By</th>
+                        <th>Status</th>
+                        <th>Request Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="received-tbody">
+                    <tr>
+                        <td colspan="6" class="text-muted">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden"></div>
+    
+    <script src="/js/api.js"></script>
+    <script src="/js/received-requests.js"></script>
+</body>
+</html>
